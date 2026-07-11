@@ -1,0 +1,13 @@
+[project]
+name = "algorithm-exercises-python"
+version = "0.1.0"
+description = "Ejercicios de algoritmos resueltos en Python, con pruebas unitarias."
+requires-python = ">=3.9"
+
+[dependency-groups]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["ejercicios"]
+addopts = "-q"
+pythonpath = ["."]
