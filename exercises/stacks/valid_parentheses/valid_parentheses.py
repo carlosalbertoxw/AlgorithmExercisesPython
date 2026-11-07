@@ -24,7 +24,6 @@ def is_valid(s: str) -> bool:
     for char in s:
         if char in "([{":
             stack.append(char)
-        elif char in _PAIRS:
-            if not stack or stack.pop() != _PAIRS[char]:
-                return False
+        elif char in _PAIRS and (not stack or stack.pop() != _PAIRS[char]):
+            return False
     return not stack

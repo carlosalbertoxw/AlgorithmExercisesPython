@@ -2,12 +2,19 @@
 name = "algorithm-exercises-python"
 version = "0.1.0"
 description = "Ejercicios de algoritmos resueltos en Python, con pruebas unitarias."
-requires-python = ">=3.9"
+requires-python = ">=3.12"
+license = "MIT"
 
 [dependency-groups]
-dev = ["pytest"]
+dev = ["pytest>=9", "ruff>=0.17"]
 
 [tool.pytest.ini_options]
-testpaths = ["ejercicios"]
-addopts = "-q"
+testpaths = ["exercises"]
+addopts = ["-q", "--doctest-modules"]
 pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
